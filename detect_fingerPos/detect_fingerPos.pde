@@ -6,6 +6,9 @@ LeapMotionP5 leap;
 float sum_x=0,sum_y=0,sum_z=0;
 //average of the position of all fingers
 float ave_x=0,ave_y=0,ave_z=0;
+/*Variable to pass the value 
+that was able to be obtained the last time when there was no value*/
+float ave_x_before=0,ave_y_before=0,ave_z_before=0;
 //"num" means how many fingers leapmotion could detect
 int num_fin=0;
   
@@ -34,6 +37,16 @@ public void draw() {
   ave_x=sum_x/num_fin;
   ave_y=sum_y/num_fin;
   ave_z=sum_z/num_fin;
+  //check there is ave_hoge. If not, return previous value.
+  String check=String.valueOf(ave_x);//it's ok only the check of ave_x (not all ave_hoge)
+  if(check!=null && !check.isEmpty()){
+    ave_x=ave_x_before;
+    ave_y=ave_y_before;
+    ave_z=ave_z_before;
+  }
+  ave_x_before=ave_x;
+  ave_y_before=ave_y;
+  ave_z_before=ave_z;
   println("num:"+str(num_fin)+" x:"+str(ave_x)+" y:"+str(ave_y)+" z:"+str(ave_z));
   fill(237,52,52);
   ellipse(ave_x,ave_y,15,15);
@@ -49,5 +62,6 @@ public void draw() {
 
 //this function is runned when this program stop.
 public void stop() {
+  println("program stoped");
   leap.stop();
 }
