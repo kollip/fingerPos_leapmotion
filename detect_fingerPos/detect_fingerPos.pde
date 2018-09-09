@@ -13,15 +13,15 @@ float ave_x_before=250,ave_y_before=250,ave_z_before=-200;
 int num_fin=0;
   
 public void setup() {
-  colorMode(RGB,256);
-    size(500, 500);
-  background(225,252,232);
+  colorMode(HSB,100);
+  size(500, 500);
+  background(0);
   leap = new LeapMotionP5(this);
 
 }
 
 public void draw() {
-  background(0);
+  background(61,8,100);
   fill(255);
   
   for (Finger finger : leap.getFingerList()) {
@@ -47,7 +47,7 @@ public void draw() {
   ave_y_before=ave_y;
   ave_z_before=ave_z;
   println("num:"+str(num_fin)+" x:"+str(ave_x)+" y:"+str(ave_y)+" z:"+str(ave_z));
-  fill(237,52,52);
+  fill(100,100,100);
   ellipse(ave_x,ave_y,15,15);
   //initialize variable of sum_hoge and ave_hoge
   sum_x=0;
