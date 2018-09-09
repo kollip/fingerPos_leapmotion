@@ -44,6 +44,7 @@ public void draw() {
   ave_x=0;
   ave_y=0;
   ave_z=0;
+  num_fin=0;
 }
 
 //this function is runned when this program stop.
