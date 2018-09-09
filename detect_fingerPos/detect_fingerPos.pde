@@ -10,7 +10,9 @@ float ave_x=0,ave_y=0,ave_z=0;
 int num_fin=0;
   
 public void setup() {
-  size(700, 700);
+  size(500, 500);
+  colorMode(RGB,256);
+  background(225,252,232);
   leap = new LeapMotionP5(this);
 
 }
@@ -21,7 +23,8 @@ public void draw() {
   
   for (Finger finger : leap.getFingerList()) {
     PVector fingerPos = leap.getTip(finger);
-    ellipse(fingerPos.x, fingerPos.y, 5, 5);
+    fill(29,169,224,100);
+    ellipse(fingerPos.x, fingerPos.y, 10, 10);
     sum_x=sum_x+fingerPos.x;
     sum_y=sum_y+fingerPos.y;
     sum_z=sum_z+fingerPos.z;
@@ -32,6 +35,8 @@ public void draw() {
   ave_y=sum_y/num_fin;
   ave_z=sum_z/num_fin;
   println("num:"+str(num_fin)+" x:"+str(ave_x)+" y:"+str(ave_y)+" z:"+str(ave_z));
+  fill(237,52,52);
+  ellipse(ave_x,ave_y,15,15);
   //initialize variable of sum_hoge and ave_hoge
   sum_x=0;
   sum_y=0;
