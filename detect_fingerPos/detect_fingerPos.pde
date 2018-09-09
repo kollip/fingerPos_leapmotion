@@ -31,7 +31,7 @@ public void draw() {
   ave_x=sum_x/num_fin;
   ave_y=sum_y/num_fin;
   ave_z=sum_z/num_fin;
-  println("x:"+str(ave_x)+" y:"+str(ave_y)+" z:"+str(ave_z));
+  println("num:"+str(num_fin)+" x:"+str(ave_x)+" y:"+str(ave_y)+" z:"+str(ave_z));
   //initialize variable of sum_hoge and ave_hoge
   sum_x=0;
   sum_y=0;
