@@ -49,6 +49,13 @@ public void draw() {
   println("num:"+str(num_fin)+" x:"+str(ave_x)+" y:"+str(ave_y)+" z:"+str(ave_z));
   fill(100,100,100);
   ellipse(ave_x,ave_y,15,15);
+  
+  //please write your code here!!
+  
+    //hoge
+  
+  //end
+  
   //initialize variable of sum_hoge and ave_hoge
   sum_x=0;
   sum_y=0;
