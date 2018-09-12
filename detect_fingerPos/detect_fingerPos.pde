@@ -11,6 +11,18 @@ that was able to be obtained the last time when there was no value*/
 float ave_x_before=250,ave_y_before=250,ave_z_before=-200;
 //"num" means how many fingers leapmotion could detect
 int num_fin=0;
+//variables for nomalization
+float X_min=0;
+float X_max=500;
+float Y_min=-100;
+float Y_max=500;
+float Z_min=-800;
+float Z_max=500;
+//nomalized variables
+float x_nomalized;
+float y_nomalized;
+float z_nomalized;
+
   
 public void setup() {
   colorMode(HSB,100);
@@ -49,6 +61,18 @@ public void draw() {
   println("num:"+str(num_fin)+" x:"+str(ave_x)+" y:"+str(ave_y)+" z:"+str(ave_z));
   fill(100,100,100);
   ellipse(ave_x,ave_y,15,15);
+  //nomalization
+  x_nomalized=ave_x/(X_max-X_min);
+  if(x_nomalized>1)x_nomalized=1;
+  if(x_nomalized<0)x_nomalized=0;
+  y_nomalized=(ave_y+100)/(Y_max-Y_min);
+  if(y_nomalized>1)y_nomalized=1;
+  if(y_nomalized<0)y_nomalized=0;
+  z_nomalized=(ave_z+800)/(Z_max-Z_min);
+  if(z_nomalized>1)y_nomalized=1;
+  if(z_nomalized<0)z_nomalized=0;
+  println("nomalization x_nomali:"+str(x_nomalized)+"y_nomali:"+str(y_nomalized)+"z_nomali:"+str(z_nomalized));
+  
   
   //please write your code here!!
   
